@@ -28,7 +28,7 @@ export const Filter = ({ onClick, selected } : FilterProps) => {
     {
       settings.map((setting) => {
         const isChecked = setting.value === selected;
-        return <div>
+        return <div key={setting.id} >
         <input checked={isChecked} type="radio" id={setting.id} value={setting.value} name='filter' onChange={(e) => {
           onClick(e.target.value)
         }} /><label className="ml-2">{setting.name}</label></div>
