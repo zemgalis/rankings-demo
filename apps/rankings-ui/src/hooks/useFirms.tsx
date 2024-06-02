@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 
-type FirmItem = {
+export type FirmItem = {
   id: number;
   firm: Firm;
 };
 
+type FirmRegion = {
+  crossBorderCapability: string;
+};
+
 type Firm = {
+  firmRegions: FirmRegion[];
   name: string;
 }
 
