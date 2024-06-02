@@ -19,7 +19,8 @@ $ node dist/index.js
 ```
 
 ## API
-### GET /
+### GET /?regionId=$REGION_ID
+Get request returns data in JSON format given `regionId` query parameter
 
 ## Step by step guide
 
