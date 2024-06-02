@@ -37,4 +37,9 @@ npm install --save-dev @types/express
 npm install --save-dev @types/cors
 npm install --save-dev esbuild
 npm install --save-dev nodemon
+npm install --save-dev supertest
+npm install --save-dev @types/supertest
+npm install --save-dev ts-jest
+npm install --save-dev @jest/globals
+npm install --save-dev @types/jest
 ```
