@@ -1,26 +1,20 @@
-type Item = {
-  id: 'string';
-  name: 'string';
-  value: 'string';
-}
+type Item = string;
 
 type DropdownProps = {
   items: Item[];
-  selected: string;
   onSelect: (value: string) => void;
 };
-export const Dropdown = ({ items } : DropdownProps) => {
+export const Dropdown = ({ items, onSelect } : DropdownProps) => {
   return <div>
-    <select>
-      <option value="">Sort by: Tier ranking</option>
+    <select onChange={(e) => {
+      const { selectedIndex } = e.target;
+      const value = selectedIndex > 0 ? items[e.target.selectedIndex - 1] : '';
+      onSelect(value)
+    }}>
+      <option value="">Tier ranking</option>
       {
         items.map((item) => {
-          return <option
-            key={item.id}
-            value={item.value}
-            onChange={(e) => {
-              console.log(e.target)
-            }}>{item.name}</option>
+          return <option key={item} value={item}>{item}</option>
         })
       }
     </select>

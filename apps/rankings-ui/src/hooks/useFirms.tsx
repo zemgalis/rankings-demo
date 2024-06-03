@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export type FirmItem = {
   id: number;
   firm: Firm;
+  tier: string;
 };
 
 type FirmRegion = {
@@ -31,7 +32,7 @@ export const useFirms = (query: Query) => {
     .then(response => {
       setFirms(response);
     } );
-  }, [])
+  }, [url])
 
   return firms;
 };
